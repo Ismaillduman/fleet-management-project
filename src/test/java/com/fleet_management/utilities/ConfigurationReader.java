@@ -1,4 +1,4 @@
-package com.fleetManagement.utilities;
+package com.fleet_management.utilities;
 
 import java.io.FileInputStream;
 import java.io.IOException;

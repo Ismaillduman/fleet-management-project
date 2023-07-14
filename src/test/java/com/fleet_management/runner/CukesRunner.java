@@ -1,4 +1,4 @@
-package com.fleetManagement.runner;
+package com.fleet_management.runner;
 
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;

@@ -1,4 +1,4 @@
-package com.fleetManagement.utilities;
+package com.fleet_management.utilities;
 
 import org.junit.Assert;
 import org.openqa.selenium.JavascriptExecutor;
