@@ -7,11 +7,11 @@ Feature: As a user, I want to filter customers’ info on the Account page
     And User go to the "All - Accounts - Customers"
     Then User should be able to see  below eight filter items on the Accounts page
 
-      | Account Name    |
-      | Contact Name    |
-      | Contact Email   |
-      | Contact Phone   |
-      | Owner           |
-      | Business Unit   |
-      | Created At      |
-      | Updated At      |
+      | Account Name  |
+      | Contact Name  |
+      | Contact Email |
+      | Contact Phone |
+      | Owner         |
+      | Business Unit |
+      | Created At    |
+      | Updated At    |

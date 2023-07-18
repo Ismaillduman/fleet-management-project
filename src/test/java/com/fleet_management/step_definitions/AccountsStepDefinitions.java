@@ -11,16 +11,20 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
-import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
 
 
 public class AccountsStepDefinitions extends BasePage {
+    private WebDriver driver;
+
+
     LoginPage loginPage = new LoginPage();
     AccountPage accountPage = new AccountPage();
 
@@ -33,6 +37,8 @@ public class AccountsStepDefinitions extends BasePage {
 
     @When("User hovers mouse over {string} tab and click {string} module")
     public void user_hovers_mouse_over_module_and_click_on_the_submenu(String tab, String module) {
+        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.visibilityOf(pageSubTitle));
         navigateToModule(tab, module);
 
     }
@@ -48,18 +54,13 @@ public class AccountsStepDefinitions extends BasePage {
 
         accountPage.filterIcon.click();
 
-       List<String >actualFilter= BrowserUtilities.getElementsText(accountPage.filters);
+        List<String> actualFilterHeaders = new ArrayList<>();
+        for (WebElement el : accountPage.filters) {
+            String[] actualText = el.getText().split(":");
+            actualFilterHeaders.add(actualText[0]);
+        }
+        Assert.assertEquals(expectedFilters, actualFilterHeaders);
 
-       Assert.assertEquals(expectedFilters,actualFilter);
-
-//        accountPage.manageFilter.click();
-//
-//        List<String> actualFilterHeaders = new ArrayList<>();
-//        for (WebElement eachFilterHeader : accountPage.filterHeaders) {
-//            actualFilterHeaders.add(eachFilterHeader.getText());
-//        }
-//        System.out.println(actualFilterHeaders);
-//        Assert.assertEquals(expectedFilters, actualFilterHeaders);
     }
 
 
