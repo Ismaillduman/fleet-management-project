@@ -53,15 +53,13 @@ public class AccountsStepDefinitions extends BasePage {
     public void user_should_be_able_to_see_below_filter_eight_items_on_the_accounts_page(List<String> expectedFilters) {
 
         accountPage.filterIcon.click();
-
         List<String> actualFilterHeaders = new ArrayList<>();
         for (WebElement el : accountPage.filters) {
             String[] actualText = el.getText().split(":");
             actualFilterHeaders.add(actualText[0]);
         }
+
         Assert.assertEquals(expectedFilters, actualFilterHeaders);
-
     }
-
-
 }
+
