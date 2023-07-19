@@ -10,7 +10,7 @@ public class ActivitiesPage {
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
-    @FindBy(css = ".recurrence-subview-control__number.error")
+    @FindBy(xpath = "(//*[@class='recurrence-subview-control__number'])[1]")
     public WebElement repeat_every;
 
     @FindBy(css = ".btn.btn-success.action-button")
@@ -18,8 +18,14 @@ public class ActivitiesPage {
     @FindBy(css = ".btn.main-group.btn-primary.pull-right ")
     public WebElement create_calender_event;
 
-    @FindBy(id = "recurrence-repeat-view3136")
+    @FindBy(xpath= "//input[@data-name='recurrence-repeat']")
     public WebElement checkbox_repeat;
     @FindBy(xpath = "//span[text()='The value have not to be more than 99.']")
     public WebElement repeat_error_message;
+
+    @FindBy(xpath = "//div[contains(text(),'You do not have permission')]")
+    public WebElement error_message;
+
+    @FindBy(xpath = "(//button[@class='close'])[3]")
+    public WebElement close_message;
 }

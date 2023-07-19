@@ -14,8 +14,8 @@ import org.junit.runner.RunWith;
         },
         features = "src/test/resources/features",
         glue = "com/fleet_management/step_definitions",
-        dryRun = true, //to check that all the snipes are implemented or not. if dryRun is true--> Without open browser
-        tags = "@activitiesPage"
+        dryRun = false, //to check that all the snipes are implemented or not. if dryRun is true--> Without open browser
+        tags = "@smoke"
 
 )
 

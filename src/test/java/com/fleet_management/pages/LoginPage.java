@@ -36,6 +36,13 @@ public class LoginPage {
         password.sendKeys(ConfigurationReader.getProperty("sales_manager_password"));
         login_button.click();
     }
+
+    public void login_as_driver() {
+
+        user_name.sendKeys(ConfigurationReader.getProperty("driver_username"));
+        password.sendKeys(ConfigurationReader.getProperty("driver_password"));
+        login_button.click();
+    }
     public void login_as_store_manager() {
 
         user_name.sendKeys(ConfigurationReader.getProperty("store_manager_username"));

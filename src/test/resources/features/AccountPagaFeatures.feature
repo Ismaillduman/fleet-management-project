@@ -1,4 +1,4 @@
-@wip
+@smoke
 Feature: As a user, I want to filter customers’ info on the Account page
 
   Scenario: Users should see 8 filter items on the Accounts page
@@ -14,4 +14,10 @@ Feature: As a user, I want to filter customers’ info on the Account page
       | Owner         |
       | Business Unit |
       | Created At    |
-      | Updated At    |
+      | Updated At     |
+@dashboard @smoke
+    Scenario:  Drivers should NOT able to access the Vehicle contracts
+    page, the app should display
+      Given The user is on the DashboardPages
+      When User hovers mouse over "Fleet" tab and click "Vehicles Model" module
+      Then User see error message
