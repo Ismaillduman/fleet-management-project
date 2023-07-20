@@ -38,9 +38,10 @@ public class ActivitiesStepDefinitions {
 
     @When("user check the repeat check box")
     public void user_check_the_repeat_check_box() {
+        wait.until(ExpectedConditions.visibilityOf(activities.checkbox_repeat));
+        ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].scrollIntoView(true);", activities.checkbox_repeat);
+        ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].click();", activities.checkbox_repeat);
 
-        JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
-        js.executeScript("arguments[0].click();", activities.checkbox_repeat);
     }
 
     @When("User enter the invalid data in repeat every box")
@@ -71,6 +72,6 @@ public class ActivitiesStepDefinitions {
         String actualErrorMessage = activities.error_message.getText();
         System.out.println("actualErrorMessage = " + actualErrorMessage);
         String expectedErrorMessage = "You do not have permission to perform this action.";
-        Assert.assertEquals(expectedErrorMessage, actualErrorMessage );
+        Assert.assertEquals(expectedErrorMessage, actualErrorMessage);
     }
 }

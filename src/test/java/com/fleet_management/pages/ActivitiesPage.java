@@ -18,7 +18,7 @@ public class ActivitiesPage {
     @FindBy(css = ".btn.main-group.btn-primary.pull-right ")
     public WebElement create_calender_event;
 
-    @FindBy(xpath= "//input[@data-name='recurrence-repeat']")
+    @FindBy(xpath = "//input[@data-name='recurrence-repeat']")
     public WebElement checkbox_repeat;
     @FindBy(xpath = "//span[text()='The value have not to be more than 99.']")
     public WebElement repeat_error_message;
