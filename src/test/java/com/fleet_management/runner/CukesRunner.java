@@ -9,6 +9,7 @@ import org.junit.runner.RunWith;
         plugin = {
 
                 "html:target/cucumber-reports.html",
+                "junit:target/junit/junit-report.xml",
                 "rerun:target/rerun.txt",
                 "me.jvt.cucumber.report.PrettyReports:target/cucumber"
         },
