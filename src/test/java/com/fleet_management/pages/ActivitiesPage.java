@@ -4,6 +4,7 @@ import com.fleet_management.utilities.Driver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.locators.RelativeLocator;
 
 public class ActivitiesPage {
     public ActivitiesPage() {
@@ -28,4 +29,7 @@ public class ActivitiesPage {
 
     @FindBy(xpath = "(//button[@class='close'])[3]")
     public WebElement close_message;
+
+
+
 }
